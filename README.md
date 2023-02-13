@@ -2,12 +2,11 @@
 
 ## Proje Açıklaması
 
-Tebrikler, Frontend konularını tamamladın. 
+Tebrikler, Frontend konularını tamamladın.
 
-Backend konularına geçmeden öğrendiğin her konuyu kullanarak kendin ile alakalı bir kişisel web sayfası yapacaksın. Bu senin Frontend konusunda ne seviyede olduğunu gösterecek. 
-Yaptığın siteyi kendi profil sayfanda da yayınlayacaksın. 
+Backend konularına geçmeden öğrendiğin her konuyu kullanarak kendin ile alakalı bir kişisel web sayfası yapacaksın. Bu senin Frontend konusunda ne seviyede olduğunu gösterecek.
+Yaptığın siteyi kendi profil sayfanda da yayınlayacaksın.
 Workintech programını tamamladığında şirketler yaptığın bu projeye de bakacaklar. O yüzden öğrendiğin her konuyu kullandığın, tam çalışır durumda, gramer hatası olmayan bir proje yapmanı tavsiye ederiz.
-
 
 ## Talimatlar
 
@@ -24,7 +23,7 @@ Workintech programını tamamladığında şirketler yaptığın bu projeye de b
 
 #### Bir tasarım dosyasından UI tarafını yapın.
 
-[Tasarımlar](https://www.figma.com/file/KlZDcmdseABJe9KHsPJ8lt/s12-design1?node-id=0%3A1) linkinde 3 farklı tasarım var. 
+[Tasarımlar](https://www.figma.com/file/KlZDcmdseABJe9KHsPJ8lt/s12-design1?node-id=0%3A1) linkinde 3 farklı tasarım var.
 Hangisini beğendi isen onu kullanabilirsin.
 
 - [ ] Tasarımdaki her bir bölüm için ayrı bir component oluşturun.
@@ -40,5 +39,5 @@ Hangisini beğendi isen onu kullanabilirsin.
 Projenizde hünerlerini göstermek için ekstra yapabileceklerin.
 
 - [ ] İletişim bölümünde form yapabilirsin.
-- [ ] Form validasyonu 
-- [ ] Formu şimdilik kendinize email olarak göndertebilirsiniz. (mailto: linki oluşturmak işine yarayacaktır. Bu [kaynaktan](https://www.w3docs.com/snippets/html/how-to-create-mailto-links.html) veya [buradan](https://www.webbilim.com/e-posta-link-mailto-baglanti-linki-nasil-olusturulur) nasıl kullanıldığını öğrenebilirsin. 
+- [ ] Form validasyonu
+- [ ] Formu şimdilik kendinize email olarak göndertebilirsiniz. (mailto: linki oluşturmak işine yarayacaktır. Bu [kaynaktan](https://www.w3docs.com/snippets/html/how-to-create-mailto-links.html) veya [buradan](https://www.webbilim.com/e-posta-link-mailto-baglanti-linki-nasil-olusturulur) nasıl kullanıldığını öğrenebilirsin.
