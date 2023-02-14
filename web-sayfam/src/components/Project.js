@@ -84,11 +84,10 @@ function Project({ data }) {
   `;
 
   const SCProjePhoto = styled.img`
-    width: 350px;
-    height: 200px;
+    width: 100%;
     position: absolute;
-    top: 31rem;
-    left: 1.5rem;
+    top: 30rem;
+    left: 0rem;
     border-radius: 2rem;
 
     @media (max-width: 425px) {

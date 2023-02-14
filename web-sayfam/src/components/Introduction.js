@@ -137,12 +137,12 @@ function Introduction() {
   console.log(introductionData);
   return (
     <SCIntroductionDiv>
-      <SCRectangle3Div></SCRectangle3Div>
+      <SCRectangle3Div />
       <SCWritingMainDiv>
         <SCWritingDiv>
           <SCHeading>{introductionData.greeting}</SCHeading>
           <SCIntroParagph>{introductionData.introParagph}</SCIntroParagph>
-          <SCRectangleDiv></SCRectangleDiv>
+          <SCRectangleDiv />
         </SCWritingDiv>
         <SCIconDiv>
           <a
@@ -171,7 +171,7 @@ function Introduction() {
           </p>
 
           <p style={{ fontSize: "1.2rem" }}>
-            Invite me to join your team ==>
+            Invite me to join your team ->
             <Link to="/contact">
               <SCSpan2>{introductionData.email}</SCSpan2>
             </Link>
@@ -179,7 +179,7 @@ function Introduction() {
         </div>
       </SCWritingMainDiv>
       <SCFotoDiv>
-        <SCRectangle2Div></SCRectangle2Div>
+        <SCRectangle2Div />
         <SCFoto src={introductionData.photo}></SCFoto>
       </SCFotoDiv>
     </SCIntroductionDiv>

@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 
 export default function AddingPage() {
   const addPageSta = useSelector((store) => store.addPageStatus);
+
   const history = useHistory();
+
   return addPageSta ? (
     <div className="max-w-screen-xl mx-auto my-20">
       <Switch>
@@ -22,10 +24,10 @@ export default function AddingPage() {
           </Link>
         </Route>
         <Route path="/adding/newskill">
-          <AddingNewSkill></AddingNewSkill>
+          <AddingNewSkill />
         </Route>
         <Route path="/adding/newproject">
-          <AddingNewProject></AddingNewProject>
+          <AddingNewProject />
         </Route>
       </Switch>
     </div>

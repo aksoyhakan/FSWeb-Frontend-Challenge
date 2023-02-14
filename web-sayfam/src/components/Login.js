@@ -58,7 +58,7 @@ export default function Login() {
             {...register("administratorName", {
               required: "Username is required.",
             })}
-          ></input>
+          />
         </div>
 
         <div className="flex w-1/2 justify-between mx-auto mb-12">
@@ -77,7 +77,7 @@ export default function Login() {
                 max: (p) => p.length <= 10 || "At most, 10 chars",
               },
             })}
-          ></input>
+          />
         </div>
 
         <button

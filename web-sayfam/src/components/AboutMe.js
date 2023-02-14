@@ -49,7 +49,7 @@ function AboutMe() {
 
   return (
     <SCAboutDiv>
-      <SCRectangleDiv></SCRectangleDiv>
+      <SCRectangleDiv />
       <SCAboutHead>About Me</SCAboutHead>
       {aboutParaghs.map((item) => (
         <SCAboutParag>{item}</SCAboutParag>

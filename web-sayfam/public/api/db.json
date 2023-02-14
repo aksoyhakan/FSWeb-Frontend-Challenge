@@ -59,7 +59,7 @@
       "name": "Random Jokes",
       "explanation": "In this project; user select random jokes from UI. In case that user likes the joke, her or she could select favorite one and can store jokes in local storage.",
       "tools": ["react", "redux", "vercel", "router", "axios"],
-      "url": "https://brightlineit.com/wp-content/uploads/2017/03/170309-update-hardware.jpg",
+      "url": "../photo.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s10g4-thunk-and-apis",
       "vercel": "https://jokestoofun.vercel.app/",
       "id": 1
@@ -76,7 +76,7 @@
         "cypress",
         "form-hook"
       ],
-      "url": "https://media.gcflearnfree.org/content/55e0730c7dd48174331f5164_01_17_2014/whatisacomputer_pc.jpg",
+      "url": "../photo2.png",
       "gitHubPage": "https://github.com/aksoyhakan/FSWeb-S7-Challenge-2",
       "vercel": "https://jokestoofun.vercel.app/",
       "id": 2
@@ -85,7 +85,7 @@
       "name": "Calculator with Memory",
       "explanation": "In this study, react-reducer is used to combine all data and function only one reducer",
       "tools": ["react", "vercel", "tailwind", "reducer"],
-      "url": "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/technology/computing/computerjargon.jpg",
+      "url": "../photo.png",
       "gitHubPage": "https://github.com/aksoyhakan/fwseb-s10g1-reducer-calculator---2",
       "vercel": "https://scical.vercel.app/",
       "id": 3
@@ -94,7 +94,7 @@
       "name": "Watchlist",
       "explanation": "In the project, UI shows lots of movies data which are obtanied from backend service. User could add selected movie to watchlist which all data stored in localstroge.",
       "tools": ["react", "vercel", "router", "axios", "tailwind", "redux"],
-      "url": "https://media.gcflearnfree.org/content/55e0730c7dd48174331f5164_01_17_2014/whatisacomputer_desktop_computers.jpg",
+      "url": "../photo2.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s10g3-redux-watchlist",
       "vercel": "https://redux-watchlist.vercel.app/",
       "id": 4
@@ -111,7 +111,7 @@
         "reduction",
         "toastify"
       ],
-      "url": "https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png",
+      "url": "../photo.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s9g1-task-yonetimi",
       "vercel": "https://advancedtodo.vercel.app/",
       "id": 5
@@ -120,7 +120,7 @@
       "name": "Book Shopping Cart",
       "explanation": "In this project, user could select book which she/he would like to buy. In the shopping cart, user could see which book user will buy and total cost in the UI.",
       "tools": ["react", "vercel", "router", "context api", "tailwind"],
-      "url": "https://www.oneeducation.org.uk/wp-content/uploads/2018/09/08.Diploma-in-Computer-Programming-1.jpg",
+      "url": "../photo2.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s11g1-shopping-cart",
       "vercel": "https://bookshoping.vercel.app/",
       "id": 6

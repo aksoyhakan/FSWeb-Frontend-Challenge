@@ -130,7 +130,6 @@ const SCTextArea = styled.textarea`
 
 export function ContactForm() {
   const formData = useSelector((store) => store.form);
-  const registForm = useSelector((store) => store.registedForms);
   const errorData = useSelector((store) => store.formError);
   const submitButtonDisabled = useSelector(
     (store) => store.submitButtonDisabled

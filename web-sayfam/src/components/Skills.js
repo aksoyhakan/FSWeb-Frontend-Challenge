@@ -60,8 +60,8 @@ function Skills() {
 
   return (
     <SCSkillsDiv>
-      <SCGrayCircle></SCGrayCircle>
-      <SCWhiteCircle></SCWhiteCircle>
+      <SCGrayCircle />
+      <SCWhiteCircle />
       <SCSkillHead>Skills</SCSkillHead>
       <SCSkills>
         {programInfo.map((item) => (

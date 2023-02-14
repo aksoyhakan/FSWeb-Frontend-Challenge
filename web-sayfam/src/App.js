@@ -20,13 +20,13 @@ function App() {
           <Foot />
         </Route>
         <Route path="/contact">
-          <ContactForm></ContactForm>
+          <ContactForm />
         </Route>
         <Route path="/login">
-          <Login></Login>
+          <Login />
         </Route>
         <Route path="/adding">
-          <AddingPage></AddingPage>
+          <AddingPage />
         </Route>
       </Switch>
     </div>

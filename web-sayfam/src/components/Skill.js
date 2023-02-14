@@ -18,6 +18,7 @@ function Skill({ program }) {
   const SCSkillPhoto = styled.img`
     border-radius: 0.5rem;
     transition: all 0.1s ease-in-out;
+    cover:
 
     &:hover {
       width: 15rem;
@@ -35,7 +36,7 @@ function Skill({ program }) {
   return (
     <SCSkillDiv>
       <a href={program.page} target="_blank">
-        <SCSkillPhoto src={program.url}></SCSkillPhoto>
+        <SCSkillPhoto src={program.url} />
         <SCSkillExp>{program.name}</SCSkillExp>
       </a>
     </SCSkillDiv>

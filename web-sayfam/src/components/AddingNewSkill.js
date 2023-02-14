@@ -46,7 +46,7 @@ export default function AddingNewSkill() {
             {...register("name", {
               required: "Program name is required.",
             })}
-          ></input>
+          />
         </div>
 
         <div className="flex w-2/3 justify-between mx-auto mb-12">
@@ -61,7 +61,7 @@ export default function AddingNewSkill() {
             {...register("url", {
               required: "URL is required.",
             })}
-          ></input>
+          />
         </div>
 
         <div className="flex w-2/3 justify-between mx-auto mb-12">
@@ -76,7 +76,7 @@ export default function AddingNewSkill() {
             {...register("page", {
               required: "Web site is required.",
             })}
-          ></input>
+          />
         </div>
         <div className="flex justify-between">
           <button

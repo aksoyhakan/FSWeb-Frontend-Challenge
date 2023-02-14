@@ -53,7 +53,7 @@ function Profile() {
         <BasicInformation />
         <AboutMe />
       </SCInfoDiv>
-      <SCRectangleDiv></SCRectangleDiv>
+      <SCRectangleDiv />
     </SCProfileDiv>
   );
 }

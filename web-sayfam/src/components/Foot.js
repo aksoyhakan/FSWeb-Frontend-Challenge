@@ -102,8 +102,8 @@ function Foot() {
 
   return (
     <SCFoot>
-      <SCRectangleDiv></SCRectangleDiv>
-      <SCRectangleDiv2></SCRectangleDiv2>
+      <SCRectangleDiv />
+      <SCRectangleDiv2 />
       <SCFootContainer>
         <SCFootHead>
           <Link to="/contact">{footInfo.header}</Link>
