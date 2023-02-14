@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedinIn,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { getData } from "../reducer/actions";
+import axios from "axios";
 
 function Foot() {
   const SCFoot = styled.div`
@@ -29,6 +32,11 @@ function Foot() {
     text-align: center;
     color: rgba(119, 119, 119, 1);
     font-weight: 500;
+    transition: all 0.3s ease-in-out;
+
+    :hover {
+      color: rgba(59, 59, 59, 1);
+    }
 
     @media (max-width: 500px) {
       font-size: 2.25rem;
@@ -83,6 +91,14 @@ function Foot() {
   `;
 
   const footInfo = useSelector((store) => store.foot);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/foot")
+      .then((response) => dispatch(getData(response.data, "foot")))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <SCFoot>
@@ -133,11 +149,24 @@ function Foot() {
                 width: "31px",
                 height: "34px",
                 display: "block",
+                marginRight: "2rem",
                 color: "rgba(119, 119, 119, 1)",
               }}
               icon={faInstagram}
             />
           </a>
+          <Link to="/login">
+            {" "}
+            <FontAwesomeIcon
+              style={{
+                width: "31px",
+                height: "34px",
+                display: "block",
+                color: "rgba(119, 119, 119, 1)",
+              }}
+              icon={faUser}
+            />
+          </Link>
         </SCIcon>
       </SCFootContainer>
     </SCFoot>

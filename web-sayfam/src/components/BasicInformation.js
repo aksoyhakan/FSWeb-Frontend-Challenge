@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import { getData } from "../reducer/actions";
 
 function BasicInformation() {
   const keyInfo = useSelector((store) => store.basicInfoKey);
   const valueInfo = useSelector((store) => store.basicInfoValue);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/basicInfoKey")
+      .then((res) => dispatch(getData(res.data, "basicInfoKey")))
+      .catch((err) => console.log(err));
+    axios
+      .get("http://localhost:5000/basicInfoValue")
+      .then((res) => dispatch(getData(res.data, "basicInfoValue")))
+      .catch((err) => console.log(err));
+  }, []);
+
   const SCBasicInfoDiv = styled.div`
     width: 500px;
     border-radius: 0.75rem;

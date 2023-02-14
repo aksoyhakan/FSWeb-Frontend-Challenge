@@ -1,7 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Skill from "./Skill";
 import styled from "styled-components";
+import axios from "axios";
+import { getData } from "../reducer/actions";
 
 function Skills() {
   const programInfo = useSelector((store) => store.programs);
@@ -46,6 +48,15 @@ function Skills() {
     border-radius: 0rem 3rem 3rem 0rem;
     background-color: white;
   `;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/programs")
+      .then((res) => dispatch(getData(res.data, "programs")))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <SCSkillsDiv>

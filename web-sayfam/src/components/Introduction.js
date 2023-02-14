@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { getData } from "../reducer/actions";
 
 function Introduction() {
   const SCIntroductionDiv = styled.div`
@@ -112,6 +114,25 @@ function Introduction() {
     font-weight: 500;
   `;
 
+  const SCSpan2 = styled.span`
+    color: black;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+
+    :hover {
+      color: rgb(59 130 246 / 1);
+    }
+  `;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/firstInfo")
+      .then((response) => dispatch(getData(response.data, "firstInfo")))
+      .catch((err) => console.log(err));
+  }, []);
+
   const introductionData = useSelector((store) => store.firstInfo);
   console.log(introductionData);
   return (
@@ -150,8 +171,10 @@ function Introduction() {
           </p>
 
           <p style={{ fontSize: "1.2rem" }}>
-            Invite me to join your team ==>{" "}
-            <Link to="/contact">{introductionData.email}</Link>
+            Invite me to join your team ==>
+            <Link to="/contact">
+              <SCSpan2>{introductionData.email}</SCSpan2>
+            </Link>
           </p>
         </div>
       </SCWritingMainDiv>

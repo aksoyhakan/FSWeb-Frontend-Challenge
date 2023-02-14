@@ -143,6 +143,12 @@
     "salary": "",
     "workingType": ""
   },
-  "submitButtonDisabled": true,
-  "registedForms": []
+  "submitButtonDisabled": {
+    "status": true
+  },
+  "registedForms": [],
+  "administrator": {
+    "administratorName": "aksoyhak",
+    "administratorPassword": "Deneme+11"
+  }
 }

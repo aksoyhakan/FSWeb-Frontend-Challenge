@@ -6,10 +6,12 @@ import {
   formRevise,
   submitButtonRevise,
   formRegister,
+  getData,
 } from "../reducer/actions";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const SCFormDiv = styled.div`
   max-width: 800px;
@@ -27,6 +29,8 @@ const SCFormHead = styled.h2`
 `;
 
 const SCInputDiv = styled.div`
+  max-width: 800px;
+  boxing-size: border-box;
   display: flex;
   justify-content: space-between;
   margin-bottom: ${(props) => (props.visible ? "0" : "6rem")};
@@ -104,15 +108,14 @@ const SCLabel = styled.label`
 
 const SCInputDiv2 = styled.div`
   display: flex;
-  justify-content: space-between;
-
-  width: 10%;
+  justify-content: flex-start;
+  width: 17%;
 `;
 
 const SCLabel2 = styled.label`
   display: block;
   font-size: 1.5rem;
-  margin: 0 1rem 0 3rem;
+  margin: 0 1rem 0 2rem;
 `;
 
 const SCTextArea = styled.textarea`
@@ -136,17 +139,43 @@ export function ContactForm() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/form")
+      .then((response) => dispatch(getData(response.data, "form")))
+      .catch((err) => console.log(err));
+    axios
+      .get("http://localhost:5000/formError")
+      .then((response) => dispatch(getData(response.data, "formError")))
+      .catch((err) => console.log(err));
+    axios
+      .get("http://localhost:5000/registedForms")
+      .then((response) => dispatch(getData(response.data, "registedForms")))
+      .catch((err) => console.log(err));
+    axios
+      .get("http://localhost:5000/submitButtonDisabled")
+      .then((response) =>
+        dispatch(getData(response.data.status, "submitButtonDisabled"))
+      )
+      .catch((err) => console.log(err));
+  }, []);
+
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(formRegister(formData));
-    toast.success("Your form is received succesfully.");
-    setTimeout(() => {
-      dispatch(formRevise("company", ""));
-      dispatch(formRevise("expectation", ""));
-      dispatch(formRevise("salary", ""));
-      dispatch(formRevise("workingType", ""));
-      history.push("/");
-    }, 2000);
+    axios
+      .post("http://localhost:5000/registedForms", formData)
+      .then((res) => {
+        dispatch(formRegister(res.data));
+        toast.success("Your form is received succesfully.");
+        setTimeout(() => {
+          dispatch(formRevise("company", ""));
+          dispatch(formRevise("expectation", ""));
+          dispatch(formRevise("salary", ""));
+          dispatch(formRevise("workingType", ""));
+          history.push("/");
+        }, 2000);
+      })
+      .catch((err) => toast.error(err));
   }
 
   function handleChange(event) {
@@ -258,33 +287,33 @@ export function ContactForm() {
           </SCLabel>
           <SCInputDiv2>
             <SCLabel2 htmlFor="remote">Remote</SCLabel2>
-            <SCInput
+            <input
               id="remote"
               name="workingType"
               type="radio"
               checked={formData.workingType === "remote"}
               onClick={(event) => handleChange(event)}
-            ></SCInput>
+            ></input>
           </SCInputDiv2>
           <SCInputDiv2>
             <SCLabel2 htmlFor="hybrid">Hybrid</SCLabel2>
-            <SCInput
+            <input
               id="hybrid"
               name="workingType"
               type="radio"
               checked={formData.workingType === "hybrid"}
               onClick={(event) => handleChange(event)}
-            ></SCInput>
+            ></input>
           </SCInputDiv2>
           <SCInputDiv2>
             <SCLabel2 htmlFor="office">Office</SCLabel2>
-            <SCInput
+            <input
               id="office"
               name="workingType"
               type="radio"
               checked={formData.workingType === "office"}
               onClick={(event) => handleChange(event)}
-            ></SCInput>
+            ></input>
           </SCInputDiv2>
         </SCInputDiv>
         <SCErrorDiv visible={errorData.workingType}>

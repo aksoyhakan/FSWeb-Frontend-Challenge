@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Project from "./Project";
+import axios from "axios";
+import { getData } from "../reducer/actions";
 
 function Projects() {
   const projectData = useSelector((store) => store.project);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/project")
+      .then((response) => dispatch(getData(response.data, "project")))
+      .catch((err) => console.log(err));
+  }, []);
 
   const SCProjectDiv = styled.div`
     max-width: 1440px;
