@@ -17,8 +17,8 @@ export function errorRevise(key, err) {
   return { type: ERROR_REVISE, payload: { point: key, newPoint: err } };
 }
 
-export function formRegister(formInfo) {
-  return { type: REGIST_FORM, payload: formInfo };
+export function formRegisted(forms) {
+  return { type: REGIST_FORM, payload: forms };
 }
 
 export function getData(data, key) {

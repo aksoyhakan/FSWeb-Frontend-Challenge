@@ -12,6 +12,7 @@ function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_DATA:
       return { ...state, [action.payload.point]: action.payload.value };
+
     case FORM_REVISE:
       return {
         ...state,
@@ -33,7 +34,7 @@ function reducer(state = initialState, action) {
     case REGIST_FORM:
       return {
         ...state,
-        registedForms: [...state.registedForms, action.payload],
+        registedForms: action.payload,
       };
     case CHANGE_PAGE:
       return { ...state, addPageStatus: action.payload };

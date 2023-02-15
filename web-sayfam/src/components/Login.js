@@ -26,11 +26,13 @@ export default function Login() {
         data.administratorPassword === res.data.administratorPassword
       ) {
         dispatch(changePage(true));
-        toast.success("You have been granted as administrator");
+        toast.success(
+          "You have been granted as administrator.You are forwarded to Adding Page"
+        );
         setTimeout(() => {
           history.push("/adding");
           reset();
-        }, 1000);
+        }, 2000);
       } else {
         dispatch(changePage(false));
         toast.error("Password or username are not correct");

@@ -164,15 +164,14 @@ export function ContactForm() {
     axios
       .post("http://localhost:5000/registedForms", formData)
       .then((res) => {
-        dispatch(formRegister(res.data));
-        toast.success("Your form is received succesfully.");
+        toast.success(`ID NO:${res.data.id} form is received succesfully.`);
         setTimeout(() => {
           dispatch(formRevise("company", ""));
           dispatch(formRevise("expectation", ""));
           dispatch(formRevise("salary", ""));
           dispatch(formRevise("workingType", ""));
           history.push("/");
-        }, 2000);
+        }, 3000);
       })
       .catch((err) => toast.error(err));
   }

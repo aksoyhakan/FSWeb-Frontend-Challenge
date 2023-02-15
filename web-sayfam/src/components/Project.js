@@ -2,8 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 function Project({ data }) {
+  function colorDetermine() {
+    return `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+      Math.random() * 255
+    )},${Math.floor(Math.random() * 255)},0.05)`;
+  }
+
   const SCProjectDiv = styled.div`
-    background-color: rgb(244, 244, 244, 1);
+    background-color: ${colorDetermine()};
     border-radius: 0.75rem;
     width: 25rem;
     height: 42rem;

@@ -1,6 +1,7 @@
 import { Link, Route, Switch, useHistory } from "react-router-dom";
 import AddingNewProject from "./AddingNewProject";
 import AddingNewSkill from "./AddingNewSkill";
+import Companies from "./Companies";
 import { useSelector } from "react-redux";
 
 export default function AddingPage() {
@@ -22,12 +23,20 @@ export default function AddingPage() {
               Adding new project
             </div>
           </Link>
+          <Link to="/adding/companies">
+            <div className="w-1/3 mx-auto text-center my-8 px-8 py-4 text-2xl bg-green-500 rounded-lg text-green-700 border-green-700 border-2 border-solid hover:bg-green-600 hover:text-green-900 hover:border-green-900">
+              See companies proposals
+            </div>
+          </Link>
         </Route>
         <Route path="/adding/newskill">
           <AddingNewSkill />
         </Route>
         <Route path="/adding/newproject">
           <AddingNewProject />
+        </Route>
+        <Route path="/adding/companies">
+          <Companies />
         </Route>
       </Switch>
     </div>
