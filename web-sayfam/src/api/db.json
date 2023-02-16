@@ -43,12 +43,7 @@
       "id": 6
     }
   ],
-  "basicInfoKey": [
-    "Birth Day",
-    "City",
-    "Education",
-    "Prefered Position"
-  ],
+  "basicInfoKey": ["Birth Day", "City", "Education", "Prefered Position"],
   "basicInfoValue": [
     "09.12.1990",
     "Istanbul",
@@ -63,13 +58,7 @@
     {
       "name": "Random Jokes",
       "explanation": "In this project; user select random jokes from UI. In case that user likes the joke, her or she could select favorite one and can store jokes in local storage.",
-      "tools": [
-        "react",
-        "redux",
-        "vercel",
-        "router",
-        "axios"
-      ],
+      "tools": ["react", "redux", "vercel", "router", "axios"],
       "url": "../photo.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s10g4-thunk-and-apis",
       "vercel": "https://jokestoofun.vercel.app/",
@@ -95,12 +84,7 @@
     {
       "name": "Calculator with Memory",
       "explanation": "In this study, react-reducer is used to combine all data and function only one reducer",
-      "tools": [
-        "react",
-        "vercel",
-        "tailwind",
-        "reducer"
-      ],
+      "tools": ["react", "vercel", "tailwind", "reducer"],
       "url": "../photo.png",
       "gitHubPage": "https://github.com/aksoyhakan/fwseb-s10g1-reducer-calculator---2",
       "vercel": "https://scical.vercel.app/",
@@ -109,14 +93,7 @@
     {
       "name": "Watchlist",
       "explanation": "In the project, UI shows lots of movies data which are obtanied from backend service. User could add selected movie to watchlist which all data stored in localstroge.",
-      "tools": [
-        "react",
-        "vercel",
-        "router",
-        "axios",
-        "tailwind",
-        "redux"
-      ],
+      "tools": ["react", "vercel", "router", "axios", "tailwind", "redux"],
       "url": "../photo2.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s10g3-redux-watchlist",
       "vercel": "https://redux-watchlist.vercel.app/",
@@ -142,13 +119,7 @@
     {
       "name": "Book Shopping Cart",
       "explanation": "In this project, user could select book which she/he would like to buy. In the shopping cart, user could see which book user will buy and total cost in the UI.",
-      "tools": [
-        "react",
-        "vercel",
-        "router",
-        "context api",
-        "tailwind"
-      ],
+      "tools": ["react", "vercel", "router", "context api", "tailwind"],
       "url": "../photo2.png",
       "gitHubPage": "https://github.com/aksoyhakan/fsweb-s11g1-shopping-cart",
       "vercel": "https://bookshoping.vercel.app/",

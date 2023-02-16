@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Skill from "./Skill";
 import styled from "styled-components";
-import axios from "axios";
-import { getData } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 
 function Skills() {
   const programInfo = useSelector((store) => store.programs);
@@ -52,10 +51,7 @@ function Skills() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/programs")
-      .then((res) => dispatch(getData(res.data, "programs")))
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("programs"));
   }, []);
 
   return (

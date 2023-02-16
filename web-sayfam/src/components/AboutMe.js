@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import axios from "axios";
-import { getData } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 
 function AboutMe() {
   const SCAboutDiv = styled.div`
@@ -41,10 +41,7 @@ function AboutMe() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/about")
-      .then((res) => dispatch(getData(res.data, "about")))
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("about"));
   }, []);
 
   return (

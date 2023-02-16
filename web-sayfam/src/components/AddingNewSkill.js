@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import { changePage } from "../reducer/actions";
+import { addingSkillServer, changePage } from "../reducer/actions";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
@@ -20,13 +19,9 @@ export default function AddingNewSkill() {
   const history = useHistory();
 
   function onSubmit(data) {
-    axios.post("http://localhost:5000/programs", data).then((res) => {
-      toast.success(
-        `ID number:${res.data.id} and ${res.data.name} program is add in Skill list succesfully.`
-      );
-      dispatch(changePage(false));
-      history.push("/");
-    });
+    dispatch(addingSkillServer(data));
+    reset();
+    history.push("/");
   }
 
   return (

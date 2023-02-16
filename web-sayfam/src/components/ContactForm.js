@@ -5,13 +5,11 @@ import {
   errorRevise,
   formRevise,
   submitButtonRevise,
-  formRegister,
-  getData,
+  getInfoFromServer,
+  formRegisterServer,
 } from "../reducer/actions";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
-import { toast } from "react-toastify";
-import axios from "axios";
 
 const SCFormDiv = styled.div`
   max-width: 800px;
@@ -139,41 +137,22 @@ export function ContactForm() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/form")
-      .then((response) => dispatch(getData(response.data, "form")))
-      .catch((err) => console.log(err));
-    axios
-      .get("http://localhost:5000/formError")
-      .then((response) => dispatch(getData(response.data, "formError")))
-      .catch((err) => console.log(err));
-    axios
-      .get("http://localhost:5000/registedForms")
-      .then((response) => dispatch(getData(response.data, "registedForms")))
-      .catch((err) => console.log(err));
-    axios
-      .get("http://localhost:5000/submitButtonDisabled")
-      .then((response) =>
-        dispatch(getData(response.data.status, "submitButtonDisabled"))
-      )
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("form"));
+    dispatch(getInfoFromServer("formError"));
+    dispatch(getInfoFromServer("registedForms"));
+    dispatch(getInfoFromServer("submitButtonDisabled"));
   }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:5000/registedForms", formData)
-      .then((res) => {
-        toast.success(`ID NO:${res.data.id} form is received succesfully.`);
-        setTimeout(() => {
-          dispatch(formRevise("company", ""));
-          dispatch(formRevise("expectation", ""));
-          dispatch(formRevise("salary", ""));
-          dispatch(formRevise("workingType", ""));
-          history.push("/");
-        }, 3000);
-      })
-      .catch((err) => toast.error(err));
+    dispatch(formRegisterServer(formData));
+    setTimeout(() => {
+      dispatch(formRevise("company", ""));
+      dispatch(formRevise("expectation", ""));
+      dispatch(formRevise("salary", ""));
+      dispatch(formRevise("workingType", ""));
+      history.push("/");
+    }, 3000);
   }
 
   function handleChange(event) {

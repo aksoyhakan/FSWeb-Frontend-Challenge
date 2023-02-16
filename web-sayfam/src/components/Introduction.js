@@ -4,8 +4,7 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { getData } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 
 function Introduction() {
   const SCIntroductionDiv = styled.div`
@@ -127,10 +126,7 @@ function Introduction() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/firstInfo")
-      .then((response) => dispatch(getData(response.data, "firstInfo")))
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("firstInfo"));
   }, []);
 
   const introductionData = useSelector((store) => store.firstInfo);

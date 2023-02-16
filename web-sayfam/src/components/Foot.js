@@ -9,7 +9,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import { getData } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 import axios from "axios";
 
 function Foot() {
@@ -94,10 +94,7 @@ function Foot() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/foot")
-      .then((response) => dispatch(getData(response.data, "foot")))
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("foot"));
   }, []);
 
   return (

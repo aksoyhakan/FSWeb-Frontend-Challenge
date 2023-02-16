@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-import { getData } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 
 function BasicInformation() {
   const keyInfo = useSelector((store) => store.basicInfoKey);
@@ -11,14 +10,8 @@ function BasicInformation() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/basicInfoKey")
-      .then((res) => dispatch(getData(res.data, "basicInfoKey")))
-      .catch((err) => console.log(err));
-    axios
-      .get("http://localhost:5000/basicInfoValue")
-      .then((res) => dispatch(getData(res.data, "basicInfoValue")))
-      .catch((err) => console.log(err));
+    dispatch(getInfoFromServer("basicInfoKey"));
+    dispatch(getInfoFromServer("basicInfoValue"));
   }, []);
 
   const SCBasicInfoDiv = styled.div`
