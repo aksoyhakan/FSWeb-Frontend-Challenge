@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import Project from "./Project";
-import axios from "axios";
 import { getInfoFromServer } from "../reducer/actions";
 
 function Projects() {

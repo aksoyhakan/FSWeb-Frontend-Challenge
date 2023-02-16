@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-
 import { adminCheck, changePage } from "../reducer/actions";
 import { useDispatch } from "react-redux";
-
 import { useHistory } from "react-router-dom";
 
 export default function Login() {

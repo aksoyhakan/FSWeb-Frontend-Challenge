@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useEffect } from "react";
-import { formRegisted } from "../reducer/actions";
+import { getInfoFromServer } from "../reducer/actions";
 import { useDispatch, useSelector } from "react-redux";
 import Company from "./Company";
 import { useHistory } from "react-router-dom";
@@ -10,9 +9,7 @@ export default function Companies() {
   const history = useHistory();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/registedForms").then((res) => {
-      dispatch(formRegisted(res.data));
-    });
+    dispatch(getInfoFromServer("registedForms"));
   }, []);
 
   const proposals = useSelector((store) => store.registedForms);

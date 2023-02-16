@@ -26,7 +26,7 @@ export function formRegisted(forms) {
 
 export const getInfoFromServer = (key) => (dispatch) => {
   axios
-    .get(`http://localhost:5000/${key}`)
+    .get(`https://hakan-aksoy-database.vercel.app/${key}`)
     .then((response) => dispatch(getData(response.data, key)))
     .catch((err) => console.log(err));
 };
@@ -34,7 +34,7 @@ export const getInfoFromServer = (key) => (dispatch) => {
 export const formRegisterServer = (form) => (dispatch) => {
   console.log("burafdayım");
   axios
-    .post("http://localhost:5000/registedForms", form)
+    .post("https://hakan-aksoy-database.vercel.app/registedForms", form)
     .then((res) => {
       toast.success(`ID NO:${res.data.id} form is received succesfully.`);
     })
@@ -42,44 +42,50 @@ export const formRegisterServer = (form) => (dispatch) => {
 };
 
 export const adminCheck = (data) => (dispatch) => {
-  axios.get("http://localhost:5000/administrator").then((res) => {
-    if (
-      data.administratorName === res.data.administratorName &&
-      data.administratorPassword === res.data.administratorPassword
-    ) {
-      dispatch(changePage(true));
-      localStorage.setItem("changePage", JSON.stringify(true));
-      toast.success(
-        "You have been granted as administrator.You are forwarded to Adding Page"
-      );
+  axios
+    .get("https://hakan-aksoy-database.vercel.app/administrator")
+    .then((res) => {
+      if (
+        data.administratorName === res.data.administratorName &&
+        data.administratorPassword === res.data.administratorPassword
+      ) {
+        dispatch(changePage(true));
+        localStorage.setItem("changePage", JSON.stringify(true));
+        toast.success(
+          "You have been granted as administrator.You are forwarded to Adding Page"
+        );
 
-      return true;
-    } else {
-      dispatch(changePage(false));
-      localStorage.setItem("changePage", JSON.stringify(false));
-      toast.error("Password or username are not correct");
-      return false;
-    }
-  });
+        return true;
+      } else {
+        dispatch(changePage(false));
+        localStorage.setItem("changePage", JSON.stringify(false));
+        toast.error("Password or username are not correct");
+        return false;
+      }
+    });
 };
 
 export const addingSkillServer = (data) => (dispatch) => {
-  axios.post("http://localhost:5000/programs", data).then((res) => {
-    toast.success(
-      `ID number:${res.data.id} and ${res.data.name} program is add in Skill list succesfully.`
-    );
-    dispatch(changePage(false));
-  });
+  axios
+    .post("https://hakan-aksoy-database.vercel.app/programs", data)
+    .then((res) => {
+      toast.success(
+        `ID number:${res.data.id} and ${res.data.name} program is add in Skill list succesfully.`
+      );
+      dispatch(changePage(false));
+    });
 };
 
 export const addingProjectServer = (data) => (dispatch) => {
   console.log("buradayım");
-  axios.post("http://localhost:5000/project", data).then((res) => {
-    toast.success(
-      `ID number:${res.data.id} and ${res.data.name} project is add in Projects list succesfully.`
-    );
-    dispatch(changePage(false));
-  });
+  axios
+    .post("https://hakan-aksoy-database.vercel.app/project", data)
+    .then((res) => {
+      toast.success(
+        `ID number:${res.data.id} and ${res.data.name} project is add in Projects list succesfully.`
+      );
+      dispatch(changePage(false));
+    });
 };
 
 export function getData(data, key) {
