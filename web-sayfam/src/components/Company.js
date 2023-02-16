@@ -5,7 +5,9 @@ export default function Company(props) {
   return (
     <div
       onClick={() => {
-        axios.delete(`http://localhost:5000/registedForms/${data.id}`);
+        axios.delete(
+          `https://hakan-aksoy-database.vercel.app/registedForms/${data.id}`
+        );
       }}
       className="text-center text-3xl bg-slate-300 border-2 border-solid border-slate-600 px-5 py-10 rounded-2xl hover:bg-slate-500 transition-all mb-10"
     >
