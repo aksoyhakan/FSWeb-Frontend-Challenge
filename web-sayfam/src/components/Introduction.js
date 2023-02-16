@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 import { getInfoFromServer } from "../reducer/actions";
 
 function Introduction() {
+  const SCHeader = styled.div`
+    width: 100%;
+    background-color: rgba(244, 244, 244, 1);
+  `;
+
   const SCIntroductionDiv = styled.div`
     max-width: 1440px;
     margin: 0 auto;
@@ -16,7 +21,6 @@ function Introduction() {
     padding-bottom: 6rem;
     padding-top: 9.44rem;
     position: relative;
-    background-color: rgba(244, 244, 244, 1);
 
     @media (max-width: 900px) {
       flex-direction: column;
@@ -132,53 +136,59 @@ function Introduction() {
   const introductionData = useSelector((store) => store.firstInfo);
   console.log(introductionData);
   return (
-    <SCIntroductionDiv>
-      <SCRectangle3Div />
-      <SCWritingMainDiv>
-        <SCWritingDiv>
-          <SCHeading>{introductionData.greeting}</SCHeading>
-          <SCIntroParagph>{introductionData.introParagph}</SCIntroParagph>
-          <SCRectangleDiv />
-        </SCWritingDiv>
-        <SCIconDiv>
-          <a
-            href="https://github.com/aksoyhakan?tab=repositories"
-            target="_blank"
-          >
-            <FontAwesomeIcon
-              style={{ width: "31px", height: "34px", marginRight: "1.25rem" }}
-              icon={faGithub}
-            />
-          </a>
-          <a
-            href="https://tr.linkedin.com/in/hakan-aksoy-102727222"
-            target="_blank"
-          >
-            <FontAwesomeIcon
-              style={{ width: "34px", height: "36px" }}
-              icon={faLinkedinIn}
-            />
-          </a>
-        </SCIconDiv>
-        <div>
-          <p style={{ fontSize: "1.2rem" }}>
-            Currently <SCWritingSpan>Freelancing</SCWritingSpan> for
-            <SCWritingSpan> UX, UI & Web Design</SCWritingSpan> Project.
-          </p>
+    <SCHeader>
+      <SCIntroductionDiv>
+        <SCRectangle3Div />
+        <SCWritingMainDiv>
+          <SCWritingDiv>
+            <SCHeading>{introductionData.greeting}</SCHeading>
+            <SCIntroParagph>{introductionData.introParagph}</SCIntroParagph>
+            <SCRectangleDiv />
+          </SCWritingDiv>
+          <SCIconDiv>
+            <a
+              href="https://github.com/aksoyhakan?tab=repositories"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                style={{
+                  width: "31px",
+                  height: "34px",
+                  marginRight: "1.25rem",
+                }}
+                icon={faGithub}
+              />
+            </a>
+            <a
+              href="https://tr.linkedin.com/in/hakan-aksoy-102727222"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                style={{ width: "34px", height: "36px" }}
+                icon={faLinkedinIn}
+              />
+            </a>
+          </SCIconDiv>
+          <div>
+            <p style={{ fontSize: "1.2rem" }}>
+              Currently <SCWritingSpan>Freelancing</SCWritingSpan> for
+              <SCWritingSpan> UX, UI & Web Design</SCWritingSpan> Project.
+            </p>
 
-          <p style={{ fontSize: "1.2rem" }}>
-            Invite me to join your team ->
-            <Link to="/contact">
-              <SCSpan2>{introductionData.email}</SCSpan2>
-            </Link>
-          </p>
-        </div>
-      </SCWritingMainDiv>
-      <SCFotoDiv>
-        <SCRectangle2Div />
-        <SCFoto src={introductionData.photo}></SCFoto>
-      </SCFotoDiv>
-    </SCIntroductionDiv>
+            <p style={{ fontSize: "1.2rem" }}>
+              Invite me to join your team ->
+              <Link to="/contact">
+                <SCSpan2>{introductionData.email}</SCSpan2>
+              </Link>
+            </p>
+          </div>
+        </SCWritingMainDiv>
+        <SCFotoDiv>
+          <SCRectangle2Div />
+          <SCFoto src={introductionData.photo}></SCFoto>
+        </SCFotoDiv>
+      </SCIntroductionDiv>
+    </SCHeader>
   );
 }
 

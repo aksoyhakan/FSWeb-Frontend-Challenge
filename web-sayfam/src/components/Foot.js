@@ -10,9 +10,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { getInfoFromServer } from "../reducer/actions";
-import axios from "axios";
 
 function Foot() {
+  const SCFooter = styled.div`
+    width: 100%;
+    background-color: rgba(244, 244, 244, 1);
+  `;
   const SCFoot = styled.div`
     max-width: 1440px;
     margin: 0 auto;
@@ -71,8 +74,9 @@ function Foot() {
     top: 0rem;
     border-radius: 0 0 20rem 20rem;
 
-    @media (max-width: 500px) {
-      display: none;
+    @media (max-width: 320px) {
+      width: 100%;
+      height: 50vw;
     }
   `;
 
@@ -98,75 +102,77 @@ function Foot() {
   }, []);
 
   return (
-    <SCFoot>
-      <SCRectangleDiv />
-      <SCRectangleDiv2 />
-      <SCFootContainer>
-        <SCFootHead>
-          <Link to="/contact">{footInfo.header}</Link>
-        </SCFootHead>
-        <SCFootPara>{footInfo.paragraph}</SCFootPara>
-        <SCFootPara>
-          <Link to="/contact">{footInfo.email}</Link>
-        </SCFootPara>
-        <SCIcon>
-          <a
-            href="https://github.com/aksoyhakan?tab=repositories"
-            target="_blank"
-          >
-            <FontAwesomeIcon
-              style={{
-                width: "31px",
-                height: "34px",
-                marginRight: "2rem",
-                display: "block",
-                color: "rgba(119, 119, 119, 1)",
-              }}
-              icon={faGithub}
-            />
-          </a>
-          <a
-            href="https://tr.linkedin.com/in/hakan-aksoy-102727222"
-            target="_blank"
-          >
-            <FontAwesomeIcon
-              style={{
-                width: "34px",
-                height: "36px",
-                display: "block",
-                marginRight: "2rem",
-                color: "rgba(119, 119, 119, 1)",
-              }}
-              icon={faLinkedinIn}
-            />
-          </a>
-          <a>
-            <FontAwesomeIcon
-              style={{
-                width: "31px",
-                height: "34px",
-                display: "block",
-                marginRight: "2rem",
-                color: "rgba(119, 119, 119, 1)",
-              }}
-              icon={faInstagram}
-            />
-          </a>
-          <Link to="/login">
-            {" "}
-            <FontAwesomeIcon
-              style={{
-                width: "31px",
-                height: "34px",
-                display: "block",
-                color: "rgba(119, 119, 119, 1)",
-              }}
-              icon={faUser}
-            />
-          </Link>
-        </SCIcon>
-      </SCFootContainer>
-    </SCFoot>
+    <SCFooter>
+      <SCFoot>
+        <SCRectangleDiv />
+        <SCRectangleDiv2 />
+        <SCFootContainer>
+          <SCFootHead>
+            <Link to="/contact">{footInfo.header}</Link>
+          </SCFootHead>
+          <SCFootPara>{footInfo.paragraph}</SCFootPara>
+          <SCFootPara>
+            <Link to="/contact">{footInfo.email}</Link>
+          </SCFootPara>
+          <SCIcon>
+            <a
+              href="https://github.com/aksoyhakan?tab=repositories"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                style={{
+                  width: "31px",
+                  height: "34px",
+                  marginRight: "2rem",
+                  display: "block",
+                  color: "rgba(119, 119, 119, 1)",
+                }}
+                icon={faGithub}
+              />
+            </a>
+            <a
+              href="https://tr.linkedin.com/in/hakan-aksoy-102727222"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                style={{
+                  width: "34px",
+                  height: "36px",
+                  display: "block",
+                  marginRight: "2rem",
+                  color: "rgba(119, 119, 119, 1)",
+                }}
+                icon={faLinkedinIn}
+              />
+            </a>
+            <a>
+              <FontAwesomeIcon
+                style={{
+                  width: "31px",
+                  height: "34px",
+                  display: "block",
+                  marginRight: "2rem",
+                  color: "rgba(119, 119, 119, 1)",
+                }}
+                icon={faInstagram}
+              />
+            </a>
+            <Link to="/login">
+              {" "}
+              <FontAwesomeIcon
+                style={{
+                  width: "31px",
+                  height: "34px",
+                  display: "block",
+                  color: "rgba(119, 119, 119, 1)",
+                }}
+                icon={faUser}
+              />
+            </Link>
+          </SCIcon>
+        </SCFootContainer>
+      </SCFoot>
+    </SCFooter>
   );
 }
 

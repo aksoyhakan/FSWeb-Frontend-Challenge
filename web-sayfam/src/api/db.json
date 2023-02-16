@@ -146,7 +146,15 @@
   "submitButtonDisabled": {
     "status": true
   },
-  "registedForms": [],
+  "registedForms": [
+    {
+      "company": "Siemens",
+      "expectation": "HTML, CSS, JAVASCRIPT",
+      "salary": "35000",
+      "workingType": "remote",
+      "id": 1
+    }
+  ],
   "administrator": {
     "administratorName": "aksoyhak",
     "administratorPassword": "Deneme+11"

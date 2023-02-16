@@ -16,7 +16,7 @@ function Project({ data }) {
     padding-top: 2.875rem;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     margin-right: 0.5rem;
     position: relative;
 
@@ -72,17 +72,40 @@ function Project({ data }) {
     }
   `;
 
-  const SCGitHubDiv = styled.div`
-    display: flex;
-    justify-content: space-between;
-  `;
-
-  const SCGitHubPar = styled.p`
+  const SCGitHubPar1 = styled.p`
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 2.5rem;
     font-style: normal;
     transition: all 0.2s ease-in-out;
+
+    position: absolute;
+    top: 26rem;
+    left: 2.5rem;
+
+    @media (max-width: 425px) {
+      left: 0.5rem;
+    }
+
+    &:hover {
+      font-size: 1.35rem;
+    }
+  `;
+
+  const SCGitHubPar2 = styled.p`
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    font-style: normal;
+    transition: all 0.2s ease-in-out;
+
+    position: absolute;
+    top: 26rem;
+    right: 2.5rem;
+
+    @media (max-width: 425px) {
+      right: 0.5rem;
+    }
 
     &:hover {
       font-size: 1.35rem;
@@ -111,14 +134,14 @@ function Project({ data }) {
           <SCTool>{item}</SCTool>
         ))}
       </SCTools>
-      <SCGitHubDiv>
-        <a href={data.gitHubPage} target="_blank">
-          <SCGitHubPar>View on GitHub</SCGitHubPar>
-        </a>
-        <a href={data.vercel} target="_blank">
-          <SCGitHubPar>Go to app</SCGitHubPar>
-        </a>
-      </SCGitHubDiv>
+
+      <a href={data.gitHubPage} target="_blank">
+        <SCGitHubPar1>View on GitHub</SCGitHubPar1>
+      </a>
+      <a href={data.vercel} target="_blank">
+        <SCGitHubPar2>Go to app</SCGitHubPar2>
+      </a>
+
       <SCProjePhoto src={data.url}></SCProjePhoto>
     </SCProjectDiv>
   );
